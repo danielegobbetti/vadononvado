@@ -1,0 +1,14 @@
+License: AGPLv3 or later
+
+This project allows people to announce if they are going to attend a meeting or not. The aims are it to be:
+- hassle free (no signup needed)
+- modern (openID auth for admins)
+- with minimum dependencies
+- fairly accurate in predictions
+
+
+The page will always show the next planned event (for LUGBZ that's next tuesday at 20:00) and the number of people foreseen(*).
+Anyone will be able to choose whether s/he will attend the event (possibly using html5 local storage to avoid bots without requesting sign up?)
+After the event an admin (that should be authenticated) will confirm the actual number of people attending the meeting. (*) The system will use this info to predict the number of people attending future events.
+
+That's all for now :-)
