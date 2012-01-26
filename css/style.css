@@ -1,7 +1,8 @@
 body {
 	width: 90%;
-       max-width: 500px;
+	max-width: 500px;
 	margin: 0 auto;
+	font-family: sans-serif;
 }
 
 h1{
@@ -50,18 +51,18 @@ form {
 	height: 200px;
 
 	display: -webkit-box; 
-	 -webkit-box-align: stretch; 
+	 -webkit-box-align: center; 
 	 -webkit-box-orient: vertical;
 	 -webkit-box-pack: center;
 
 	display: -moz-box;
+	 -moz-box-align: center;
 	 -moz-box-orient: vertical;
-	 -moz-box-align: stretch;
 	 -moz-box-pack: center;
 
 	display: box;
+	 box-align: center;
 	 box-orient: vertical;
-	 box-align: stretch;
 	 box-pack: center;
 }
 
@@ -74,27 +75,96 @@ form > * {
 
 
 #choices {
+	width: 80%;
+
 	display: -webkit-box; 
-	 -webkit-box-align: stretch; 
+	 -webkit-box-align: center; 
 	 -webkit-box-orient: horizontal;
-	 -webkit-box-pack: center;
+	 -webkit-box-pack: justify;
 
 	display: -moz-box;
+	 -moz-box-align: center;
 	 -moz-box-orient: horizontal;
-	 -moz-box-align: stretch;
 	 -moz-box-pack: center;
 
 	display: box;
+	 box-align: center;
 	 box-orient: horizontal;
-	 box-align: stretch;
 	 box-pack: center;
 
 }
 
-#choices > * {
+#choices input {
+	display: none;
+}
+
+#choices label {
 	-webkit-box-flex: 0;
 	-moz-box-flex: 0;
 	box-flex: 0;
+	display: block;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	border-radius: 50px;
+	background-color: #8B9BBA;
+	color: #FFF;
+	font-weight: bold;
+	text-shadow:0 -1px #003EBA, 0 1px #8B9BBA;
 }
 
+#choices label:after {
+	content: "";
+	display: block;
+	border: 1px solid #29447B;
+	width: 108px;
+	height: 108px;
+	border-radius: 55px;
+	position: relative;
+	top: -105px;
+	left: -5px;
+}
 
+input[type="radio"]:checked + label{
+	-moz-transition: all .8s ease-in-out;
+	-webkit-transition: all .8s ease-in-out;
+	transition: all .8s ease-in-out;
+}
+
+#attending:checked + label{
+	font-size: 1.2em;
+	transform: rotate(-15deg);
+	-webkit-transform: rotate(-15deg);
+	-o-transform: rotate(-15deg);
+	-moz-transform: rotate(-15deg);
+}
+
+#notattending:checked + label{
+	font-size: .8em;
+	transform: rotate(720deg);
+	-webkit-transform: rotate(720deg);
+	-o-transform: rotate(720deg);
+	-moz-transform: rotate(720deg);
+}
+input[type="radio"]:checked + label::after{
+	z-index: -1;
+	background-color: #455D8B;
+/*	background-color: #FF9000; not working with the animation*/
+} 
+
+input[type="submit"] {
+	margin-top: 20px;
+	width: 140px;
+	height: 50px;
+	border: 8px solid #14223D;
+	border-top: 0;
+	background: #FFF;
+	border-radius: 0 0 120px 120px / 0 0 90px 90px;
+}
+
+.notes {
+	margin-top: 100px;
+	font-size: smaller;
+	color: #333;
+}
